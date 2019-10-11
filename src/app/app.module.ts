@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import { BlogComponent } from './blog/blog.component';
 import { FormsModule } from '@angular/forms';
+import { PostListComponentComponent } from './post-list-component/post-list-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppareilComponent,
-    BlogComponent
+    BlogComponent,
+    PostListComponentComponent
   ],
   imports: [
     BrowserModule,

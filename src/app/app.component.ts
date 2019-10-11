@@ -1,51 +1,50 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuth = false;
-  lastUpdate = new Promise((resolve, reject) => {
+    appareils = [
+        {
+            name: 'Machine à laver',
+            status: 'éteint'
+        },
+        {
+            name: 'Frigo',
+            status: 'allumé'
+        },
+        {
+            name: 'Ordinateur',
+            status: 'éteint'
+        }
+    ];
 
-    const date = new Date();
+    posts = [
+        {
+            title: 'Mon premier post',
+            content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
+                'harness highly efficient core.',
+            loveIts: 0,
+            created_at: new Date(),
+        },
+        {
+            title: 'Mon deuxième post',
+            content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
+                'harness highly efficient core.',
+            loveIts: 0,
+            created_at: new Date(),
+        },
+        {
+            title: 'Encore un post',
+            content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
+                'harness highly efficient core.',
+            loveIts: 0,
+            created_at: new Date(),
+        }
+    ];
 
-    setTimeout(
-
-      () => {
-
-        resolve(date);
-
-      }, 2000
-
-    );
-
-  });
-
-  appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'éteint'
-    },
-    {
-      name: 'Frigo',
-      status: 'allumé'
-    },
-    {
-      name: 'Ordinateur',
-      status: 'éteint'
+    constructor() {
     }
-  ];
-
-  constructor() {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 2000
-    );
-  }
-  onAllumer() {
-    console.log('On allume tout !');
-  }
 }

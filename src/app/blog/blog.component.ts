@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+    selector: 'app-blog',
+    templateUrl: './blog.component.html',
+    styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+    @Input() postLoveIts: number;
+    @Input() postTitle: string;
+    @Input() postContent: string;
+    @Input() postDate: Date;
 
-  ngOnInit() {
-  }
+    likeIt() {
+        this.postLoveIts++;
+    }
+    dislikeIt() {
+        this.postLoveIts--;
+    }
 
+    constructor() {
+    }
+
+
+    ngOnInit() {
+    }
 }
