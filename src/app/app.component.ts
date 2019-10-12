@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,23 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuth = false;
-  lastUpdate = new Promise((resolve, reject) => {
-
-    const date = new Date();
-
-    setTimeout(
-
-      () => {
-
-        resolve(date);
-
-      }, 2000
-
-    );
-
-  });
-
+  postCreate = new Date();
   appareils = [
     {
       name: 'Machine à laver',
@@ -38,14 +22,30 @@ export class AppComponent {
     }
   ];
 
+  posts = [
+    {
+      title: 'Mon premier post',
+      content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
+        'harness highly efficient core.',
+      loveIts: 0,
+      created_at: this.postCreate,
+    },
+    {
+      title: 'Mon deuxième post',
+      content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
+        'harness highly efficient core.',
+      loveIts: 0,
+      created_at: this.postCreate,
+    },
+    {
+      title: 'Encore un post',
+      content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
+        'harness highly efficient core.',
+      loveIts: 0,
+      created_at: this.postCreate,
+    }
+  ];
+
   constructor() {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 2000
-    );
-  }
-  onAllumer() {
-    console.log('On allume tout !');
   }
 }
