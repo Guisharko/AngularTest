@@ -1,17 +1,6 @@
-<li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': postLoveIts > 0,
-                'list-group-item-danger': postLoveIts < 0 }">
-  <div class="row">
-    <h3 class="col-6">{{ postTitle }}</h3>
-    <p class="col-6 text-right">
-      <i>{{postDate | date:'M/d/y, h:mm a' }}</i>
-    </p>
-  </div>
-  <p>{{ postContent }}</p>
-  <button class="btn btn-success" (click)="likeIt()">
-    Love It
-  </button>
-  <button class="btn btn-danger ml-2" (click)="dislikeIt()">
-    Don't love it
-  </button>
-</li>
+<app-item-component *ngFor="let post of ItemComponent"
+                         [postTitle]="post.title"
+                         [postContent]="post.content"
+                         [postLoveIts]="post.loveIts"
+                         [postDate]="post.created_at">
+</app-item-component>
