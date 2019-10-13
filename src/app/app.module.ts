@@ -7,7 +7,8 @@ import { AppareilComponent } from './appareil/appareil.component';
 import { FormsModule } from '@angular/forms';
 import { PostListComponentComponent } from './post-list-component/post-list-component.component';
 import { ItemComponentComponent } from './item-component/item-component.component';
-
+import { AppareilService } from './services/appareil.service';
+import {PostService} from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { ItemComponentComponent } from './item-component/item-component.componen
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AppareilService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

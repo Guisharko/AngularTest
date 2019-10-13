@@ -1,6 +1,8 @@
-<app-item-component *ngFor="let post of ItemComponent"
-                         [postTitle]="post.title"
-                         [postContent]="post.content"
-                         [postLoveIts]="post.loveIts"
-                         [postDate]="post.created_at">
-</app-item-component>
+<ul class="list-group">
+  <app-item-component *ngFor="let post of ItemComponent"
+                      [postTitle]="post.title"
+                      [postContent]="post.content"
+                      [postLoveIts]="post.loveIts"
+                      [postDate]="post.created_at">
+  </app-item-component>
+</ul>

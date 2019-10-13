@@ -1,51 +1,31 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppareilService} from './services/appareil.service';
+import {PostService} from './services/post.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  postCreate = new Date();
-  appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'éteint'
-    },
-    {
-      name: 'Frigo',
-      status: 'allumé'
-    },
-    {
-      name: 'Ordinateur',
-      status: 'éteint'
-    }
-  ];
+export class AppComponent implements OnInit {
+  appareils: any[];
+  posts: any[];
+  isAuth = false;
+  ButtonActive = null;
 
-  posts = [
-    {
-      title: 'Mon premier post',
-      content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
-        'harness highly efficient core.',
-      loveIts: 0,
-      created_at: this.postCreate,
-    },
-    {
-      title: 'Mon deuxième post',
-      content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
-        'harness highly efficient core.',
-      loveIts: 0,
-      created_at: this.postCreate,
-    },
-    {
-      title: 'Encore un post',
-      content: 'Dynamically expedite client-centric potentialities through real-time resources. Appropriately ' +
-        'harness highly efficient core.',
-      loveIts: 0,
-      created_at: this.postCreate,
-    }
-  ];
+  constructor(private appareilService: AppareilService, private postService: PostService) {
+    setTimeout(
+      () => {
+        this.isAuth = true;
+      }, 4000
+    );
+  }
+  ButtonStatus(name) {
+    this.ButtonActive = name;
+  }
 
-  constructor() {
+  ngOnInit() {
+    this.appareils = this.appareilService.appareils;
+    this.posts = this.postService.posts;
   }
 }
